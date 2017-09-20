@@ -8,9 +8,9 @@
 
 namespace sonrac\i18n;
 
-use sonrac\i18n\contracts\Projects as IProjects;
+use sonrac\i18n\contracts\ProjectsInterface as IProjects;
 use sonrac\i18n\contracts\ProjectsRepositoryInterface;
-use sonrac\i18n\models\Projects;
+use sonrac\i18n\models\ProjectsInterface;
 use sonrac\i18n\models\search\ProjectsRepository;
 use Yii;
 
@@ -24,7 +24,8 @@ use Yii;
  */
 class Module extends \yii\base\Module
 {
-    public function init() {
+    public function init()
+    {
 
     }
 
@@ -33,9 +34,10 @@ class Module extends \yii\base\Module
      *
      * @author Donii Sergii <doniysa@gmail.com>
      */
-    protected function initContracts() {
+    protected function initContracts()
+    {
         if (!Yii::$container->has(IProjects::class)) {
-            Yii::$container->set(IProjects::class, Projects::class);
+            Yii::$container->set(IProjects::class, ProjectsInterface::class);
         }
 
         if (!Yii::$container->has(ProjectsRepositoryInterface::class)) {

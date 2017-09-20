@@ -9,8 +9,8 @@
 namespace sonrac\i18n\models;
 
 /**
- * Class Projects
- * Projects model
+ * Class ProjectsInterface
+ * ProjectsInterface model
  *
  * @property int id
  * @property string domain
@@ -26,7 +26,7 @@ namespace sonrac\i18n\models;
  *
  * @author  Donii Sergii <doniysa@gmail.com>
  */
-class Projects extends \yii\db\ActiveRecord implements \sonrac\i18n\contracts\Projects
+class ProjectsInterface extends \yii\db\ActiveRecord implements \sonrac\i18n\contracts\ProjectsInterface
 {
     /**
      * {@inheritDoc}

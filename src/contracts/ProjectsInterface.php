@@ -8,6 +8,8 @@
 
 namespace sonrac\i18n\contracts;
 
+use yii\db\ActiveRecordInterface;
+
 /**
  * Interface Project
  * Project model contract
@@ -16,7 +18,7 @@ namespace sonrac\i18n\contracts;
  *
  * @author  Donii Sergii <doniysa@gmail.com>
  */
-interface Projects extends ActiveRecordInterface
+interface ProjectsInterface extends ActiveRecordInterface
 {
     /**
      * Get project by domain

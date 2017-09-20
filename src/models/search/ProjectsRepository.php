@@ -9,7 +9,7 @@
 namespace sonrac\i18n\models\search;
 
 use sonrac\i18n\contracts\ProjectsRepositoryInterface;
-use sonrac\i18n\models\Projects;
+use sonrac\i18n\models\ProjectsInterface;
 
 /**
  * Class ProjectsRepository
@@ -19,7 +19,7 @@ use sonrac\i18n\models\Projects;
  *
  * @author  Donii Sergii <doniysa@gmail.com>
  */
-class ProjectsRepository extends Projects implements ProjectsRepositoryInterface
+class ProjectsRepository extends ProjectsInterface implements ProjectsRepositoryInterface
 {
     /**
      * @inheritDoc

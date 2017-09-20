@@ -1,0 +1,24 @@
+{
+  "name": "sonrac/yii2-relation-trait",
+  "require": {
+    "php": ">=7",
+    "yiisoft/yii2": "2.*"
+  },
+  "require-dev": {
+    "codeception/verify": "~0.3.3",
+    "codeception/specify": "~0.4.6",
+    "codeception/codeception": "^2.2"
+  },
+  "optimize-autoloader": true,
+  "authors": [
+    {
+      "name": "Doniy Serhey",
+      "email": "doniysa@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "sonrac\\i18n\\": "src/"
+    }
+  }
+}
