@@ -6,7 +6,7 @@
  * Time: 1:32 PM
  */
 
-namespace sonrac\relations\tests\application\boot;
+namespace sonrac\i18n\tests\application\boot;
 
 use sonrac\relations\tests\application\migrations\CreateTestTables;
 use yii\base\BootstrapInterface;
@@ -24,7 +24,7 @@ class Boot implements BootstrapInterface
      */
     public function bootstrap($app)
     {
-        \Yii::setAlias('@sonracRelations', __DIR__ . '/../../../src');
+        \Yii::setAlias('@sonracI18n', __DIR__ . '/../../../src');
 //        ob_start();
 //        $migration = new CreateTestTables();
 //        $migration->up();

@@ -9,14 +9,14 @@
  */
 Yii::setAlias('@tests', __DIR__ . '/../');
 
-use sonrac\relations\tests\application\boot\Boot;
+use sonrac\i18n\tests\application\boot\Boot;
 
 $config = [
     'id'                  => 'test',
     'basePath'            => __DIR__ . '/../../tests/application',
     'runtimePath'         => __DIR__ . '/../../tests/_output',
     'bootstrap'           => [Boot::class],
-    'controllerNamespace' => 'sonrac\relations\tests\application\controllers',
+//    'controllerNamespace' => 'sonrac\relations\tests\application\controllers',
     'vendorPath'          => __DIR__ . '/../../vendor',
     'components'          => [
         'urlManager'   => [
@@ -28,7 +28,7 @@ $config = [
             'linkAssets' => true,
             'forceCopy'  => true,
         ],
-        'db'           => require __DIR__ . '/../_db.php',
+//        'db'           => require __DIR__ . '/../_db.php',
         'request'      => [
 //            'cookieValidationKey' => 'asdasdasd',
         ],
@@ -40,6 +40,11 @@ $config = [
                     'basePath'       => __DIR__ . '/../../src/messages',
                 ],
             ],
+        ],
+    ],
+    'modules' => [
+        'i18n' => [
+            'class' => \sonrac\i18n\Module::class,
         ],
     ],
 ];

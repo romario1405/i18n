@@ -6,7 +6,7 @@
  * Time: 5:27 PM
  */
 
-namespace sonrac\relations\tests\application\boot;
+namespace sonrac\i18n\tests\application\boot;
 
 /**
  * Class StartSelenium
@@ -62,7 +62,7 @@ class StartSelenium
      * @param null|string $outFile Log file path
      * @param null|string $pidFile Selenium server pid file path
      *
-     * @return \sonrac\relations\tests\application\boot\StartSelenium
+     * @return \sonrac\i18n\tests\application\boot\StartSelenium
      */
     public static function getInstance($command = null, $outFile = null, $pidFile = null)
     {

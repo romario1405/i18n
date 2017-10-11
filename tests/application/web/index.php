@@ -13,5 +13,5 @@ $additional = [
         ],
     ]
 ];
-$loader->setPsr4('sonrac\\relations\\tests\\', __DIR__ . '/../../');
+$loader->setPsr4('sonrac\\i18n\\tests\\', __DIR__ . '/../../');
 (new yii\web\Application(\yii\helpers\ArrayHelper::merge($config, $additional)))->run();

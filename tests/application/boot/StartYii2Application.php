@@ -6,7 +6,7 @@
  * Time: 5:27 PM
  */
 
-namespace sonrac\relations\tests\application\boot;
+namespace sonrac\i18n\tests\application\boot;
 
 /**
  * Class StartSelenium

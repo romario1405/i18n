@@ -9,7 +9,7 @@
  */
 Yii::setAlias('@tests', __DIR__ . '/../');
 
-use sonrac\relations\tests\application\boot\Boot;
+use sonrac\i18n\tests\application\boot\Boot;
 
 return [
     'id'          => 'test',
