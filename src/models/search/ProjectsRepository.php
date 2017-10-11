@@ -9,7 +9,7 @@
 namespace sonrac\i18n\models\search;
 
 use sonrac\i18n\contracts\ProjectsRepositoryInterface;
-use sonrac\i18n\models\ProjectsInterface;
+use sonrac\i18n\models\Projects;
 
 /**
  * Class ProjectsRepository
@@ -19,12 +19,12 @@ use sonrac\i18n\models\ProjectsInterface;
  *
  * @author  Donii Sergii <doniysa@gmail.com>
  */
-class ProjectsRepository extends ProjectsInterface implements ProjectsRepositoryInterface
+class ProjectsRepository extends Projects implements ProjectsRepositoryInterface
 {
     /**
      * @inheritDoc
      */
-    public function find($params)
+    public function search($params)
     {
 
     }

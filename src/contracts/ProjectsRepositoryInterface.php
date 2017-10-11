@@ -27,5 +27,5 @@ interface ProjectsRepositoryInterface
      *
      * @author Donii Sergii <doniysa@gmail.com>
      */
-    public function find($params);
+    public function search($params);
 }

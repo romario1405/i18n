@@ -15,7 +15,7 @@ class m170924_112829_create_tables extends Migration
     {
         $this->createTable($this->languages, [
             'id'         => $this->primaryKey()->comment('ID'),
-            'name'       => $this->string(10)->notNull()->comment('Name'),
+            'name'       => $this->string(25)->notNull()->comment('Name'),
             'ascii_name' => $this->string(100)->notNull()->comment('ASCII Name'),
             'created_at' => $this->integer(20)->comment('Created At'),
             'updated_at' => $this->integer(20)->comment('Updated At'),

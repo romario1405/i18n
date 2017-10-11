@@ -14,7 +14,6 @@ use sonrac\i18n\models\Projects;
 class ProjectsController extends \yii\web\Controller
 {
     public function actionIndex() {
-        echo 123;
-        exit;
+        return $this->render('index');
     }
 }
