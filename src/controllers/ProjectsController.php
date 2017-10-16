@@ -10,10 +10,17 @@ namespace sonrac\i18n\controllers;
 
 
 use sonrac\i18n\models\Projects;
+use Yii;
 
 class ProjectsController extends \yii\web\Controller
 {
     public function actionIndex() {
-        return $this->render('index');
+        $projectsRepository = Yii::$container->get('sonrac\i18n\contracts\ProjectsRepositoryInterface');
+        $projectsDataProvider = $projectsRepository->search(Yii::$app->request->queryParams);
+
+        return $this->render('index', [
+            'projectsDataProvider' => $projectsDataProvider,
+            'projectsRepository' => $projectsRepository,
+        ]);
     }
 }

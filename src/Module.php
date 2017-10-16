@@ -24,12 +24,11 @@ use Yii;
  */
 class Module extends \yii\base\Module
 {
-
     public $controllerNamespace = 'sonrac\\i18n\\controllers';
 
     public function init()
     {
-
+        $this->initContracts();
     }
 
     /**

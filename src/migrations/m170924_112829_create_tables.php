@@ -28,7 +28,7 @@ class m170924_112829_create_tables extends Migration
             'id'                => $this->primaryKey()->comment('ID'),
             'domain'            => $this->string(100)->comment('Domain'),
             'is_enable'         => $this->smallInteger(1)->defaultValue(0)->comment('Is Enable'),
-            'is_maintance_mode' => $this->smallInteger(1)->defaultValue(0)->comment('Is Maintance Mode'),
+            'is_maintain_mode'  => $this->smallInteger(1)->defaultValue(0)->comment('Is Maintance Mode'),
             'is_www_redirect'   => $this->smallInteger(1)->defaultValue(0)->comment('Is www Redirect'),
             'created_at'        => $this->integer(20)->comment('Created At'),
             'updated_at'        => $this->integer(20)->comment('Updated At'),

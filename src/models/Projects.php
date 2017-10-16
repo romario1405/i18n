@@ -21,6 +21,7 @@ namespace sonrac\i18n\models;
  * @property int $updated_at
  * @property int $updated_by
  * @property int $created_by
+ * @property int $deleted_at
  *
  * @package sonrac\i18n\models
  *
@@ -28,6 +29,11 @@ namespace sonrac\i18n\models;
  */
 class Projects extends \yii\db\ActiveRecord implements \sonrac\i18n\contracts\ProjectsInterface
 {
+    public static function tableName()
+    {
+        return '{{%projects}}';
+    }
+
     /**
      * {@inheritDoc}
      */
