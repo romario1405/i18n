@@ -26,29 +26,41 @@ echo GridView::widget([
             'attribute' => 'domain',
             'value' => function ($model) {
                 return $model->domain;
+            },
+            'format' => 'url',
+        ],
+        [
+            'attribute' => 'is_enable',
+            'format' => 'html',
+            'value' => function ($model) {
+                return $model->getLabels($model->is_enable);
             }
         ],
         [
-            'attribute' => 'is_enable',
-        ],
-        [
             'attribute' => 'is_www_redirect',
+            'format' => 'html',
+            'value' => function ($model) {
+                return $model->getLabels($model->is_www_redirect);
+            }
         ],
         [
             'attribute' => 'is_maintain_mode',
-        ],
-        [
-            'attribute' => 'is_enable',
+            'format' => 'html',
+            'value' => function ($model) {
+                return $model->getLabels($model->is_maintain_mode);
+            }
         ],
         [
             'attribute' => 'created_at',
+            'format' => ['date', 'php:H:i:s d-m-Y'],
         ],
         [
             'attribute' => 'deleted_at',
+            'format' => ['date', 'php:H:i:s d-m-Y'],
         ],
         [
             'class'    => 'yii\grid\ActionColumn',
-            'template' => '{view}{delete}',
+            'template' => '{view}{update}{delete}',
         ],
     ],
 ]);
