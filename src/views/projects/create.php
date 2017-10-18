@@ -1,7 +1,8 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: romario
- * Date: 17.10.17
- * Time: 0:27
- */
+<?php /* @var $this yii\web\View */ ?>
+<div class="i18n-projects-create">
+    <?php echo $this->render('_form', [
+        'model' => $model,
+    ]); ?>
+</div>
+
+

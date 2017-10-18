@@ -7,6 +7,7 @@
  */
 
 namespace sonrac\i18n\models;
+use yii\behaviors\TimestampBehavior;
 
 /**
  * Class ProjectsInterface
@@ -41,6 +42,13 @@ class Projects extends \yii\db\ActiveRecord implements \sonrac\i18n\contracts\Pr
     const ENABLE = 1;
     const DISABLE = 0;
 
+    public function behaviors()
+    {
+        return [
+            TimestampBehavior::className(),
+        ];
+    }
+
     public static function tableName()
     {
         return '{{%projects}}';
@@ -68,7 +76,7 @@ class Projects extends \yii\db\ActiveRecord implements \sonrac\i18n\contracts\Pr
     public function rules() {
         return [
             ['domain', 'required'],
-            ['domain', 'string', 'length' => 100],
+            ['domain', 'url'],
             [['is_enable', 'is_www_redirect', 'is_maintain_mode'], 'boolean']
         ];
     }
@@ -76,7 +84,16 @@ class Projects extends \yii\db\ActiveRecord implements \sonrac\i18n\contracts\Pr
     public function attributeLabels()
     {
         return [
-
+            'id' => 'ID',
+            'domain' => 'Domain',
+            'is_enable' => 'Enable Project',
+            'is_maintain_mode' => 'Enable Maintain Mode',
+            'is_www_redirect' => 'Enable WWW Redirect',
+            'created_at' => 'Created At',
+            'updated_at' => 'Updated At',
+            'created_by' => 'Created By',
+            'updated_by' => 'Updated By',
+            'deleted_at' => 'Deleted At',
         ];
     }
 
