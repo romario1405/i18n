@@ -1,10 +1,35 @@
+build:
+  environment:
+        php:
+            version: 7.0.20
+  dependencies:
+          before:
+              - sudo composer self-update && composer --version
+              - composer global require "fxp/composer-asset-plugin:~1.0"
+  tests:
+    override:
+      - command: 'vendor/bin/codecept --coverage --coverage-xml'
 imports:
     - php
-
+checks:
+  php:
+    code_rating: true
+    duplication: true
+filter:
+  excluded_paths:
+    - vendor/*
+before_commands:
+  - "composer global require fxp/composer-asset-plugin:^1.3.1"
+  - "composer install --prefer-source"
 tools:
-    external_code_coverage:
-        timeout: 2100 # Timeout in seconds.
-    # disable copy paste detector and similarity analyzer as they have no real value
-    # and a huge bunch of false-positives
     php_sim: false
     php_cpd: false
+    php_pdepend: true
+    php_analyzer: true
+    php_changetracking: true
+    external_code_coverage:
+        timeout: 2100 # Timeout in seconds.
+filter:
+    excluded_paths:
+        - tests/*
+        - vendor/*
