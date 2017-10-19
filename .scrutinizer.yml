@@ -8,7 +8,7 @@ build:
               - composer global require "fxp/composer-asset-plugin:~1.0"
   tests:
     override:
-      - command: 'vendor/bin/codecept --coverage --coverage-xml'
+      - command: 'php vendor/bin/codecept --coverage --coverage-xml'
 imports:
     - php
 checks:
