@@ -5,10 +5,12 @@ build:
   dependencies:
           before:
               - sudo composer self-update && composer --version
+              - composer global require fxp/composer-asset-plugin:^1.3.1
+              - composer install --prefer-source
               - composer global require "fxp/composer-asset-plugin:~1.0"
   tests:
     override:
-      - command: 'php vendor/bin/codecept --coverage --coverage-xml'
+      - command: 'php vendor/bin/codecept run --coverage --coverage-xml'
 imports:
     - php
 checks:
@@ -18,9 +20,6 @@ checks:
 filter:
   excluded_paths:
     - vendor/*
-before_commands:
-  - "composer global require fxp/composer-asset-plugin:^1.3.1"
-  - "composer install --prefer-source"
 tools:
     php_sim: false
     php_cpd: false

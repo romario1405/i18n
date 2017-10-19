@@ -8,7 +8,8 @@
   "require-dev": {
     "codeception/verify": "~0.3.3",
     "codeception/specify": "~0.4.6",
-    "codeception/codeception": "^2.2"
+    "codeception/codeception": "^2.2",
+    "phpunit/php-code-coverage": "^5.2"
   },
   "optimize-autoloader": true,
   "authors": [
