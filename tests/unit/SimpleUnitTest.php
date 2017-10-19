@@ -16,6 +16,9 @@ use yii;
  * Relation trait test
  *
  */
-class SimpleUnit extends Unit
+class SimpleUnitTest extends Unit
 {
+    public function testFirst() {
+        $this->assertTrue(true);
+    }
 }

@@ -1,0 +1,17 @@
+build:
+  tests:
+    override:
+      - command: 'vendor/bin/codecept --coverage --coverage-xml'
+        coverage:
+          file: 'coverage.xml'
+          format: 'clover'
+checks:
+  php:
+    code_rating: true
+    duplication: true
+
+filter:
+  excluded_paths:
+    - vendor/*
+before_commands:
+  - "composer install --prefer-source"
