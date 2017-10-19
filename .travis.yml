@@ -5,6 +5,10 @@ php:
   - 7.1
   - 7.2
 
+env:
+  global:
+     secure: "kJb5Zz+yHx7dsnlPiJ7DvHNx85rIPllrOhKqFhz2V6lnrb5wKQH/kPmfi0smD/wuwxUkulKq008OaAbqROACmTRFjImRLyy0vGpyHF2yIrsIaCsn5Q0KT+6BMNWeD+0lgH73+fcIkl42nvTDy2VvMHq0+SvYFy2C0oUo07np6AxetyyneEWjhPG5VdQRezPiUQFt+nPKAxAVTqJIPSR4Xz+bapZoQy1c1XCyfwm+61VxbabainOUewD1oKMSfs9mpd3mprvfVAiA1FDQ1bt3GPhmbjo6ipC5EpdgskED6gqURfNveCVDNL1XfcQt+5/0JdZod6zylIi/xcjM6f/DEe55vlhEQlv6cf9JMJPGApSSa96t9NM9xSqnXHH2c3Y+SrOZ4gQ40xQcNZjXQ0HyjUNwTIXHYhQ8yU+6EswFhqu19tmAe+bigZgK0oDB+6XfJwNRyMqrGvYJIPQc2p/ZT1Ht8/8pr6J6AvynCYGr9cIjKgMY5RD4jfJuqHheStfNaA8dsofAuNbhlriAgKLc8yFpO7w9m9TMgU1uGt3YO4s7WBDRYMqYhqEqV2hFQXtpxZa5Oeo2e842qUl2Odg1FzvJPxJR8ThxpUJL9nkHHzF2dOs1hqOjnIiBn7NcecZ8dy01aMa0h7cNPMXa/yTc35g4THkmUz2CN3Ql2cfr9H4="
+
 matrix:
   fast_finish: true
 
