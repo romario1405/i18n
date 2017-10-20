@@ -11,6 +11,9 @@ build:
   tests:
     override:
       - command: 'php vendor/bin/codecept run --coverage --coverage-xml'
+      - coverage:
+          file: data/_output/covegare.xml
+          format: clover
 imports:
     - php
 checks:
