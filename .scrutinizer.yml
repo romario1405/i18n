@@ -10,8 +10,9 @@ build:
               - composer global require "fxp/composer-asset-plugin:~1.0"
   tests:
     override:
-      - command: 'php vendor/bin/codecept run --coverage --coverage-xml'
-      - coverage:
+      -
+        command: 'php vendor/bin/codecept run --coverage --coverage-xml'
+        coverage:
           file: 'tests/data/_output/covegare.xml'
           format: clover
 imports:
