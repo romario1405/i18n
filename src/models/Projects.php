@@ -7,7 +7,12 @@
  */
 
 namespace sonrac\i18n\models;
+
+
+use yii\behaviors\BlameableBehavior;
 use yii\behaviors\TimestampBehavior;
+use yii\db\ActiveRecord;
+use sonrac\i18n\contracts\ProjectsInterface;
 
 /**
  * Class ProjectsInterface
@@ -28,7 +33,7 @@ use yii\behaviors\TimestampBehavior;
  *
  * @author  Donii Sergii <doniysa@gmail.com>
  */
-class Projects extends \yii\db\ActiveRecord implements \sonrac\i18n\contracts\ProjectsInterface
+class Projects extends ActiveRecord implements ProjectsInterface
 {
     const PROJECT_ENABLE = 1;
     const PROJECT_DISABLE = 0;
@@ -46,6 +51,11 @@ class Projects extends \yii\db\ActiveRecord implements \sonrac\i18n\contracts\Pr
     {
         return [
             TimestampBehavior::className(),
+            [
+                'class' => BlameableBehavior::className(),
+                'createdByAttribute' => 'created_by',
+                'updatedByAttribute' => 'updated_by',
+            ]
         ];
     }
 

@@ -18,6 +18,9 @@ $config = [
     'bootstrap'           => [Boot::class],
     'vendorPath'          => __DIR__ . '/../../vendor',
     'components'          => [
+        'user' => [
+            'identityClass' => UserModel::class,
+        ],
         'urlManager'   => [
             'showScriptName'      => false,
             'enablePrettyUrl'     => true,
