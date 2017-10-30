@@ -1,0 +1,4 @@
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/yii2-skeletone/i18n/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/yii2-skeletone/i18n/?branch=master)
+[![Code Coverage](https://scrutinizer-ci.com/g/yii2-skeletone/i18n/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/yii2-skeletone/i18n/?branch=master)
+[![Build Status](https://scrutinizer-ci.com/g/yii2-skeletone/i18n/badges/build.png?b=master)](https://scrutinizer-ci.com/g/yii2-skeletone/i18n/build-status/master)
+[![Build Status](https://travis-ci.org/yii2-skeletone/i18n.svg?branch=master)](https://travis-ci.org/yii2-skeletone/i18n)

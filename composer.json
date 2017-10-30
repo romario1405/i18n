@@ -4,10 +4,12 @@
     "php": ">=7",
     "yiisoft/yii2": "2.*"
   },
+  "stability": "stable",
   "require-dev": {
     "codeception/verify": "~0.3.3",
     "codeception/specify": "~0.4.6",
-    "codeception/codeception": "^2.2"
+    "codeception/codeception": "^2.2",
+    "phpunit/php-code-coverage": "^5.2"
   },
   "optimize-autoloader": true,
   "authors": [

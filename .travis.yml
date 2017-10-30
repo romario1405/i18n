@@ -1,0 +1,28 @@
+language: php
+php:
+- 7.0
+- 7.1
+- 7.2
+env:
+  global:
+    secure: kJb5Zz+yHx7dsnlPiJ7DvHNx85rIPllrOhKqFhz2V6lnrb5wKQH/kPmfi0smD/wuwxUkulKq008OaAbqROACmTRFjImRLyy0vGpyHF2yIrsIaCsn5Q0KT+6BMNWeD+0lgH73+fcIkl42nvTDy2VvMHq0+SvYFy2C0oUo07np6AxetyyneEWjhPG5VdQRezPiUQFt+nPKAxAVTqJIPSR4Xz+bapZoQy1c1XCyfwm+61VxbabainOUewD1oKMSfs9mpd3mprvfVAiA1FDQ1bt3GPhmbjo6ipC5EpdgskED6gqURfNveCVDNL1XfcQt+5/0JdZod6zylIi/xcjM6f/DEe55vlhEQlv6cf9JMJPGApSSa96t9NM9xSqnXHH2c3Y+SrOZ4gQ40xQcNZjXQ0HyjUNwTIXHYhQ8yU+6EswFhqu19tmAe+bigZgK0oDB+6XfJwNRyMqrGvYJIPQc2p/ZT1Ht8/8pr6J6AvynCYGr9cIjKgMY5RD4jfJuqHheStfNaA8dsofAuNbhlriAgKLc8yFpO7w9m9TMgU1uGt3YO4s7WBDRYMqYhqEqV2hFQXtpxZa5Oeo2e842qUl2Odg1FzvJPxJR8ThxpUJL9nkHHzF2dOs1hqOjnIiBn7NcecZ8dy01aMa0h7cNPMXa/yTc35g4THkmUz2CN3Ql2cfr9H4=
+matrix:
+  fast_finish: true
+sudo: true
+cache:
+  directories:
+  - vendor
+install:
+- composer config -g github-oauth.github.com ${GITHUB_TOKEN}
+- travis_retry composer self-update && composer --version
+- travis_retry composer global require "fxp/composer-asset-plugin:~1.0"
+- export PATH="$HOME/.composer/vendor/bin:$PATH"
+- travis_retry composer install --prefer-dist --no-interaction
+script:
+- php vendor/bin/codecept run --coverage --coverage-xml
+after_script:
+- travis_retry wget https://scrutinizer-ci.com/ocular.phar
+- php ocular.phar code-coverage:upload --format=php-clover coverage/coverage.clover
+notifications:
+  slack:
+    secure: cpd1glWs8MOanwf4aZsM0dTWJUgdbCj4Gz1vIz+h01XpcGTXabLAhb9LfN95y5g9+h4xhPZV0iMqnn0ye2JXeMR0+66olwGze+1N3Pc+51hIA5BcFkzobgrEjRrfoBzShnYeHwmPST7yI+EkOKe4uP+FSLgFVwDAkI1urzV0gUAdA7T6Z2jBKe+2Cgzv1bg2cBO3jRH/m4xo/EWvAXflh1crUX70KqI01yMDwI9s1SR4nAqnIfqrICn+7P4ZPnuuUfUlUsZgmjtxToxiYrn7UnA085HmyN2mPWwP1LazxWaKLjxZV7A2QGEf0CygsMTm0NTIxk4HRoEK/pSo9aiRT3Ha+VIb+Y/exkLBnIsV3F4jNxofYCsyDvEqfADZo2dfbs+6w7mqeBSM8v60YKNQm89OdAXQVqqF7ELx0VTDbsRehsFt3e6EMQGNmHlosnu788boRjRto3RuzQ4ubJr7ayC6H4QTLoJPNjYjPY0klM12Aga87h4tVjLmHBdXODvS3lcoraTHqqwd2hY1fduXTT/O5gS6qoresUj1aF+t0/TnxuiS5sNMt8dq3SHnLzNLw6t+p92LsxSWbek2AT53QpPzVDRmKU37k4J8YD7im0VQb0ydp1ELvoMEXCBSyCw3aC3IjdGTsum0vd2BwfNYNECUVAgcc4ezbXS5WcuxxZs=
