@@ -37,17 +37,53 @@ use yii\widgets\DetailView;
             [
                 'attribute' => 'is_enable',
                 'format' => 'html',
-                'value' => $model->getLabels($model->is_enable),
+                'value' => function ($model) {
+                    $label = null;
+
+                    switch ($model->is_enable) {
+                        case true:
+                            $label = '<span class="label label-success">Yes</span>';
+                            break;
+                        case false:
+                            $label = '<span class="label label-danger">No</span>';
+                            break;
+                    }
+                    return $label;
+                },
             ],
             [
                 'attribute' => 'is_www_redirect',
                 'format' => 'html',
-                'value' => $model->getLabels($model->is_www_redirect),
+                'value' => function ($model) {
+                    $label = null;
+
+                    switch ($model->is_www_redirect) {
+                        case true:
+                            $label = '<span class="label label-success">Yes</span>';
+                            break;
+                        case false:
+                            $label = '<span class="label label-danger">No</span>';
+                            break;
+                    }
+                    return $label;
+                },
             ],
             [
                 'attribute' => 'is_maintain_mode',
                 'format' => 'html',
-                'value' => $model->getLabels($model->is_maintain_mode),
+                'value' => function ($model) {
+                    $label = null;
+
+                    switch ($model->is_maintain_mode) {
+                        case true:
+                            $label = '<span class="label label-success">Yes</span>';
+                            break;
+                        case false:
+                            $label = '<span class="label label-danger">No</span>';
+                            break;
+                    }
+                    return $label;
+                },
             ],
             'created_at:datetime',
         ],

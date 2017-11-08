@@ -38,21 +38,51 @@ use yii\helpers\Html;
                 'attribute' => 'is_enable',
                 'format' => 'html',
                 'value' => function ($model) {
-                    return $model->getLabels($model->is_enable);
+                    $label = null;
+
+                    switch ($model->is_enable) {
+                        case true:
+                            $label = '<span class="label label-success">Yes</span>';
+                            break;
+                        case false:
+                            $label = '<span class="label label-danger">No</span>';
+                            break;
+                    }
+                    return $label;
                 }
             ],
             [
                 'attribute' => 'is_www_redirect',
                 'format' => 'html',
                 'value' => function ($model) {
-                    return $model->getLabels($model->is_www_redirect);
+                    $label = null;
+
+                    switch ($model->is_www_redirect) {
+                        case true:
+                            $label = '<span class="label label-success">Yes</span>';
+                            break;
+                        case false:
+                            $label = '<span class="label label-danger">No</span>';
+                            break;
+                    }
+                    return $label;
                 }
             ],
             [
                 'attribute' => 'is_maintain_mode',
                 'format' => 'html',
                 'value' => function ($model) {
-                    return $model->getLabels($model->is_maintain_mode);
+                    $label = null;
+
+                    switch ($model->is_maintain_mode) {
+                        case true:
+                            $label = '<span class="label label-success">Yes</span>';
+                            break;
+                        case false:
+                            $label = '<span class="label label-danger">No</span>';
+                            break;
+                    }
+                    return $label;
                 }
             ],
             'created_at:datetime',

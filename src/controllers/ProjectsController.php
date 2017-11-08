@@ -9,6 +9,8 @@
 namespace sonrac\i18n\controllers;
 
 
+use sonrac\i18n\contracts\ProjectsInterface;
+use sonrac\i18n\contracts\ProjectsRepositoryInterface;
 use yii\web\Controller;
 use Yii;
 use yii\web\NotFoundHttpException;
@@ -16,7 +18,7 @@ use yii\web\NotFoundHttpException;
 class ProjectsController extends Controller
 {
     public function actionIndex() {
-        $projectsRepository = Yii::$container->get('sonrac\i18n\contracts\ProjectsRepositoryInterface');
+        $projectsRepository = Yii::$container->get(ProjectsRepositoryInterface::class);
         $projectsDataProvider = $projectsRepository->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -26,7 +28,7 @@ class ProjectsController extends Controller
     }
 
     public function actionCreate() {
-        $model = Yii::$container->get('sonrac\i18n\contracts\ProjectsInterface');
+        $model = Yii::$container->get(ProjectsInterface::class);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -66,7 +68,7 @@ class ProjectsController extends Controller
 
     protected function findModel($id)
     {
-        if (($model = Yii::$container->get('sonrac\i18n\contracts\ProjectsInterface')::findOne($id)) !== null) {
+        if (($model = Yii::$container->get(ProjectsInterface::class)::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');

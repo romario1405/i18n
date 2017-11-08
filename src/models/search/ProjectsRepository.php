@@ -8,6 +8,7 @@
 
 namespace sonrac\i18n\models\search;
 
+use sonrac\i18n\contracts\ProjectsInterface;
 use sonrac\i18n\contracts\ProjectsRepositoryInterface;
 use sonrac\i18n\models\Projects;
 use Yii;
@@ -34,7 +35,7 @@ class ProjectsRepository extends Projects implements ProjectsRepositoryInterface
      */
     public function search($params)
     {
-        $query = Yii::$container->get('sonrac\i18n\contracts\ProjectsInterface')->find();
+        $query = Yii::$container->get(ProjectsInterface::class)->find();
         $query->orderBy(['created_at' => SORT_DESC]);
 
         $dataProvider = new ActiveDataProvider([

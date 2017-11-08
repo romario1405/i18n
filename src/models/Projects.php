@@ -51,11 +51,6 @@ class Projects extends ActiveRecord implements ProjectsInterface
     {
         return [
             TimestampBehavior::className(),
-            [
-                'class' => BlameableBehavior::className(),
-                'createdByAttribute' => 'created_by',
-                'updatedByAttribute' => 'updated_by',
-            ]
         ];
     }
 
